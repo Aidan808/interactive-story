@@ -1,0 +1,159 @@
+/*
+
+Color Scheme
+
+Accent: #CE0000
+Blocks: #000063
+Background: #5A79A5
+Attention: #9CAAC6
+Text: #DEE7EF
+
+dark gray: 	#0b0b0b
+
+*/
+
+
+
+
+
+body{
+	background-color:  #5A79A5;
+	font-family: sans-serif;
+	color: #DEE7EF
+}
+
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+		cursor: pointer;
+}
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+		cursor: pointer;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+		cursor: pointer;
+}
+a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+		cursor: pointer;
+}
+
+#header{
+	background-color: #000063;
+	border-radius: 5px;
+	top: 0;
+	/*border: 2px solid white;*/
+	color: white;
+	padding: 15px;
+	height: 80px;
+	width: 95%;
+	text-align: center;
+	position: fixed;
+}
+
+#press{
+	margin-top: 20px;
+	border-color: none;
+	border-style: none;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #000063;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#press:hover{
+	background-color: #9CAAC6;
+}
+
+#characterDiv{
+	margin-top: 130px;
+	border-radius: 10px;
+	float: left;
+	height: 600px;
+	width: 20%;
+	color: white;
+	position: fixed;
+}
+
+#characterName{
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 25px;
+	text-align: center;
+}
+
+#characterSheet{
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+	height:200px;
+}
+
+#dieBox{
+	margin-top: 20px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#dieShape{
+  display: inline-block;
+	color: white;
+	border-radius: 50%;
+	border-color: none;
+	border-style: none;
+	font-size: 20px;
+	font-weight: bold;
+	width: 80px;
+	height: 80px;
+	background-color: #CE0000;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.2s ease-in-out;
+}
+
+#dieShape:hover{
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#characterInv{
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+	height:200px;
+
+
+}
+#storyDiv{
+	/*border: 1px solid darkgray;*/
+	padding: 15px;
+	margin-top: 130px;
+	margin-left: 21%;
+	float: left;
+	width: 70%;
+}
+
+
+#story {
+	padding: 15px;
+	color:white;
+	font-family: Courier;
+}
+
+#save{
+	font-weight: bold;
+	font-size: 20px;
+}
