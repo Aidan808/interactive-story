@@ -1,6 +1,8 @@
 var hiroName;
 var dieRoll;
 var dieResult;
+var itemFound = false;
+
 var special;
 var conflict;
 
@@ -8,6 +10,7 @@ var character = {
     name : "John",
     mind : 5,
     body : 5,
+    inventory : ["apple", "bag"],
     ch1Stat : false,
     ch1Choice : false,
     ch1Ending : false
@@ -38,8 +41,24 @@ heroButton.addEventListener('submit', function(event) {
 function updateStat(input){
   document.getElementById('characterName').innerHTML = input.name;
   document.getElementById('characterStat').innerHTML = 'Mind level: ' + input.mind + '<br>Body level: ' + input.body;
-  document.getElementById('characterInv').innerHTML = 'Inventory';
+  document.getElementById('invTitle').innerHTML = "Inventory: ";
+  document.getElementById('backpack').innerHTML = character.inventory.join(", ");
 };
+
+function searchInv(item){
+  for (var i = 0; i < character.inventory.length; i++) {
+    if (item === character.inventory[i]){
+      var itemGet = document.createElement('div');
+      console.log("You have the "+item);
+      itemFound = item;
+      console.log(itemFound);
+    } else {
+      console.log("searching");
+      console.log(itemFound);
+    }
+  }
+
+}
 
 function roll(stat, die){
   dieRoll = Math.floor(Math.random()*die);
@@ -81,11 +100,13 @@ function introduction(input) {
   special.id = "choice1";
   document.getElementById('story').appendChild(intro);
   document.getElementById('story').appendChild(special);
+  searchInv("apple");
 }
 
 function smart(input) {
   document.getElementById('story').removeChild(special);
   input.mind = input.mind + 3;
+  input.inventory.push("book");
   updateStat(character);
   console.log("choice smart");
   input.ch1Stat = "smart";
@@ -101,6 +122,7 @@ function smart(input) {
 function strong(input) {
   document.getElementById('story').removeChild(special);
   character.body = input.body + 3;
+  input.inventory.push("knife");
   updateStat(character);
   console.log("choice strong");
   input.ch1Stat = "strong";
@@ -121,6 +143,7 @@ function conflict(input) {
 }
 
 function talk(input) {
+  searchInv("knife");
   document.getElementById('story').removeChild(conflict);
   console.log("choice talk");
   input.ch1Choice = "talk";
@@ -146,6 +169,7 @@ function talk(input) {
 }
 
 function fight(input) {
+  searchInv("knife");
   document.getElementById('story').removeChild(conflict);
   console.log("choice fight");
   input.ch1Choice = "fight";
