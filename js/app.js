@@ -56,9 +56,7 @@ function searchInv(item){
       console.log("searching");
       console.log(itemFound);
     }
-  }
-
-}
+};
 
 function roll(stat, die){
   dieRoll = Math.floor(Math.random()*die);
